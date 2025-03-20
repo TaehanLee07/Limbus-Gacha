@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인격 랜덤 뽑기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Limbus Gacha Simulator</h1>
+        <h4><a style="color:antiquewhite"href="https://github.com/TaehanLee07">제작자 TaehanLee07</a></h4>
+        <p>확률은 림버스 컴퍼니 내 뽑기 확률과 동일 합니다. 변동 확률도 존재합니다.</p>
+        <div class="selection">
+            <button id="normalDraw">일반 추출</button>
+            <button id="walpurgisDraw">발푸르기스의 밤 특별 추출</button>
+            <button id="specificDraw">특정 추출</button>
+            <button id="guaranteedDraw">3성 확정 추출</button>
+        </div>
+        
+        <div id="specificSelect" style="display: none;">
+            <label for="identitySelect">특정 인격 선택:</label>
+            <select id="identitySelect">
+                <option></option>
+            </select>
+            <button id="confirmSpecific">확정</button>
+        </div>
+        
+        <div class="draw-options" style="display: none;">
+            <button id="singleDraw">1회 뽑기</button>
+            <button id="halfDraw">5회 뽑기</button>
+            <button id="multiDraw">10회 뽑기</button>
+        </div>
+        
+        <div id="result" class="result"></div>
+        <button id="revealAll" style="display: none;">모두 열기</button>
+        <button onclick="location.href='index.html'">뒤로 가기</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
