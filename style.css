@@ -167,15 +167,16 @@ button:hover {
 
 /* 번뜩이는 효과 */
 @keyframes flash {
-    0% { filter: brightness(1); }
-    50% { filter: brightness(2); }
-    100% { filter: brightness(1); }
+    0% { filter: brightness(1); transform: scale(1); }
+    30% { filter: brightness(2.5); transform: scale(1.05); }
+    50% { filter: brightness(1.5); transform: scale(0.98); }
+    70% { filter: brightness(2); transform: scale(1.02); }
+    100% { filter: brightness(1); transform: scale(1); }
 }
 .flash-effect {
-    animation: flash 0.5s ease-in-out;
+    animation: flash 0.7s ease-in-out;
 }
 
-/* 이름 & 수감자 표시 박스 (이미지 내부 오른쪽 아래 배치) */
 .identity-name-box {
     position: absolute;
     bottom: 10px;
@@ -222,4 +223,3 @@ button:hover {
     transition: background-color 0.3s ease; 
     position: relative;
 }
-
