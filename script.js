@@ -825,16 +825,29 @@ const identities = [
     },
 ];
 
+const EGO = [
+    {   
+        name: "[ 오감도 ] 이상",
+        image: "images/ego/Yi Sang/오감도.png",
+        grade: "Zayin", // Teth, He, waw
+        isWalpurgis: false 
+    },
+    { grade: 2, probability: 13 },
+    { grade: 3, probability: 3 }
+];
+
 const identityGrades = [
     { grade: 1, probability: 84 },
     { grade: 2, probability: 13 },
-    { grade: 3, probability: 3 }
+    { grade: 3, probability: 3 },
 ];
 
 let isWalpurgisMode = false;
 let isSpecificMode = false;
 let isGuaranteedMode = false;
 let selectedIdentity = null;
+
+var n_input = document.getElementById("NDraw");
 
 document.getElementById("normalDraw").addEventListener("click", () => showDrawOptions(false));
 document.getElementById("walpurgisDraw").addEventListener("click", () => showDrawOptions(true));
@@ -851,6 +864,7 @@ document.getElementById("confirmSpecific").addEventListener("click", () => {
 document.getElementById("singleDraw").addEventListener("click", () => drawIdentity(1));
 document.getElementById("halfDraw").addEventListener("click", () => drawIdentity(5));
 document.getElementById("multiDraw").addEventListener("click", () => drawIdentity(10));
+document.getElementById("NDraw").addEventListener("input", () => drawIdentity(n_input.value));
 document.getElementById("revealAll").addEventListener("click", revealAll);
 
 function showDrawOptions(isWalpurgis) {
@@ -956,6 +970,7 @@ function displayResults(results) {
                     cover.style.opacity = 0;
                     setTimeout(() => cover.remove(), 500);
                 });
+                
             } else {
                 if (Math.random() < 0.05) {
                     // 변동 발생 시, 일반 뽑기 모드에서는 발푸르기스 인격 제외
@@ -1015,12 +1030,12 @@ function showThreeStarAnimation(identity, callback) {
         overlay.appendChild(symbol);
         setTimeout(() => {
             symbol.style.opacity = 1;
-            symbol.style.transform = "scale(1.2)";
+            symbol.style.transform = "scale(1.15)";
             setTimeout(() => {
                 overlay.removeChild(symbol);
                 showIdentityImage(identity, overlay, callback);
-            }, 1500);
-        }, 500);
+            }, 1400);
+        }, 600);
     } else {
         showIdentityImage(identity, overlay, callback);
     }
