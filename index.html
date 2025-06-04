@@ -7,38 +7,57 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Limbus Gacha Simulator</h1>
-        <h4><a style="color:antiquewhite"href="https://github.com/TaehanLee07">제작자 TaehanLee07</a></h4>
-        <p>확률은 림버스 컴퍼니 내 뽑기 확률과 동일 합니다. 변동 확률은 5% 입니다.</p>
-        <div class="selection">
-            <button id="normalDraw">일반 추출</button>
-            <button id="walpurgisDraw">발푸르기스의 밤 특별 추출</button>
-            <button id="specificDraw">특정 추출</button>
-            <button id="guaranteedDraw">3성 확정 추출</button>
+    <div id="screenFlash" class="screen-flash"></div>
+    
+    <div class="main-container">
+        <div class="header">
+            <h1 class="title">림버스 컴퍼니</h1>
+            <p class="subtitle">인격 추출 시뮬레이터</p>
+            <div class="creator-info">
+                <p>제작: <a href="https://github.com/TaehanLee07" target="_blank">TaeHanLee07</a></p>
+            </div>
         </div>
-        
-        <div id="specificSelect" style="display: none;">
-            <label for="identitySelect">특정 인격 선택:</label>
-            <select id="identitySelect">
-                <option></option>
-            </select>
-            <button id="confirmSpecific">확정</button>
+
+        <div class="game-board">
+            <div id="selectionPanel" class="selection-panel">
+                <button id="normalDraw" class="gacha-button">
+                    <h3>일반 추출</h3>
+                    <p>기본 확률로 인격을 추출합니다</p>
+                </button>
+                <button id="walpurgisDraw" class="gacha-button special">
+                    <h3>발푸르기스의 밤</h3>
+                    <p>2성, 3성 확률이 3배 증가합니다</p>
+                </button>
+                <button id="specificDraw" class="gacha-button">
+                    <h3>특정 인격 확정</h3>
+                    <p>원하는 인격을 선택하여 확정 추출</p>
+                </button>
+                <button id="guaranteedDraw" class="gacha-button">
+                    <h3>3성 확정 추출</h3>
+                    <p>반드시 하나 이상의 3성이 나옵니다</p>
+                </button>
+            </div>
+
+            <div id="specificSelect" class="specific-select">
+                <h3>특정 인격 선택</h3>
+                <select id="identitySelect"></select>
+                <button id="confirmSpecific" class="draw-btn">선택 완료</button>
+            </div>
+
+            <div id="drawOptions" class="draw-options">
+                <button id="singleDraw" class="draw-btn">1회 추출</button>
+                <button id="halfDraw" class="draw-btn">5회 추출</button>
+                <button id="multiDraw" class="draw-btn">10회 추출</button>
+                <div class="n-draw-container">
+                    <input type="number" id="nDrawInput" class="n-draw-input" min="1" max="100" value="1">
+                    <button id="nDraw" class="draw-btn">개수 선택 추출</button>
+                </div>
+                <button id="backToSelection" class="back-btn" onclick="location.href='index.html'">돌아가기</button>
+            </div>
+
+            <div id="resultContainer" class="result-container"></div>
+            <button id="revealAll" class="reveal-all-btn" style="display: none;">모두 열기</button>
         </div>
-        
-        <div class="draw-options" style="display: none;">
-            <button id="singleDraw">1회 뽑기</button>
-            <button id="halfDraw">5회 뽑기</button>
-            <button id="multiDraw">10회 뽑기</button>
-            <input id="NDraw">N회 뽑기</input>
-            <!-- <button id="userSelectDraw">원하는 만큼 뽑기
-                <input type="number" maxlength="3">
-            </button> -->
-        </div>
-        
-        <div id="result" class="result"></div>
-        <button id="revealAll" style="display: none;">모두 열기</button>
-        <button onclick="location.href='index.html'">뒤로 가기</button>
     </div>
     
     <script src="script.js"></script>
