@@ -1,4 +1,4 @@
-# [사이트 접속 << 클릭]((https://taehanlee07.github.io/Limbus-Gacha/))
+# [사이트 접속 << 클릭](https://taehanlee07.github.io/Limbus-Gacha/)
 # Limbus-Gacha
 ```
 림버스 컴퍼니 가챠 시뮬레이터입니다.
