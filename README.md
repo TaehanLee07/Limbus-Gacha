@@ -1,4 +1,4 @@
-# [사이트 접속 << 클릭](https://limbus-gacha-b7wq2xkhb-taehanlee07s-projects.vercel.app/)
+# [사이트 접속 << 클릭]([https://limbus-gacha-b7wq2xkhb-taehanlee07s-projects.vercel.app/](https://taehanlee07.github.io/Limbus-Gacha/))
 # Limbus-Gacha
 ```
 림버스 컴퍼니 가챠 시뮬레이터입니다.
